@@ -10,6 +10,13 @@ body {
   text-align: center;
 }
 
+floor {
+  margin: 0 auto;
+  width: 900px;
+  background: URL(./beijing.jpg)  center;
+  /*font: 100%/1.4 helvetica, arial, sans-serif;*/
+}
+
 form {
   margin-bottom: 20px;
 }

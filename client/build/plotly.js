@@ -59,7 +59,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             z: data.z.slice(),
             id: data.id.slice(),
             text: data.text.slice(),
-            mode: 'markers',
+            mode: 'lines+markers',
             // type: 'scatter3d', Todo: uncomment this will enable 3D mode
             marker: {
                 size: data.marker.size.slice(),
@@ -107,7 +107,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         },
         yaxis: {
             title: 'Y coordinate',
-            range: [0,793]
+            range: [0,1500]
         },
         // scene:{
         //     xaxis:{visible:true},
