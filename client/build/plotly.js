@@ -10,6 +10,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminde
         }
         // If a container for this year + continent doesn't exist yet,
         // then create one:
+        // lilil
         if (!(trace = byYear[continent])) {
             trace = byYear[continent] = {
                 x: [],
