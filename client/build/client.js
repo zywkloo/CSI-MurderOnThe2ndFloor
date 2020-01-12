@@ -1,11 +1,24 @@
-;(function() {
+import { runPlotly } from './plotly.js'
+
+(function() {
   const form = document.getElementById('form')
   const room = document.getElementById('room')
+  const landingView = document.getElementById('landing_page')
+  const analyzeView = document.getElementById('level1')
+  let currentView = landingView
+
+  analyzeView.style.display = 'none'
 
   document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', uploadData)
-    // form.addEventListener('submit', testData)
   })
+
+  const changeView = view => {
+    currentView.style.display = 'none'
+    currentView = view
+    currentView.style.display = 'block'
+    runPlotly();
+  }
 
   let dataset
 
@@ -21,6 +34,7 @@
           console.log('CSI: upload successful')
           console.log(xhr.responseText)
           //todo: change view
+          changeView(analyzeView)
         } else if (xhr.status === 500) {
           console.error(error)
         }

@@ -14,29 +14,31 @@
 </head>
 
 <body>
+
+<img class="header-img" src="detective.png" alt="detective icon">
 <h1>Crime Scene Investigation Tool</h1>
 
-<div class="controls-stacked">
-    <label class="file">
-        <input type="file" id="file">
-        <span class="file-custom"></span>
-    </label>
+<div id="landing_page">
+    <div class="controls-stacked">
+        <label class="file">
+            <input type="file" id="file">
+            <span class="file-custom"></span>
+        </label>
+    </div>
+
+    <form class="pure-form" id="form">
+        <fieldset>
+            <input type="text" id="room" placeholder="Enter victim room#" autofocus required>
+            <button class="pure-button pure-button-primary" id="go">Go</button>
+        </fieldset>
+    </form>
 </div>
 
-<form class="pure-form" id="form">
-    <fieldset>
-        <input type="text" id="room" placeholder="Enter victim room#" autofocus required>
-        <button class="pure-button pure-button-primary" id="go">Go</button>
-    </fieldset>
-</form>
-
 <div id="level1" style="max-height: 1000px;max-width:1000px; width:70%;height:70% ; margin: auto;"><!-- Plotly chart will be drawn inside this DIV --></div>
-<div id="level2"><!-- Plotly chart will be drawn inside this DIV --></div>
 
 
-
-<script src='plotly.js'></script>
-<script src='client.js'></script>
+<script type="module" src='plotly.js'></script>
+<script type="module" src='client.js'></script>
 </body>
 
 </html>

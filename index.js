@@ -14,9 +14,9 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, ROOT_DIR)))
 
 app.post('/upload/dataset', async (req, res) => {
-  console.log('reqBody', req.body) //obj
+  console.log('reqBody', req.body.room) //obj
   try {
-    res.json(req.body)
+    res.json(req.body.room)
   } catch (e) {
     logError(e)
     res.status(500).json({errorCode: 500, errorMessage: e.message})
