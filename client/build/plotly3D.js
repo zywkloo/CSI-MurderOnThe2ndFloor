@@ -1,3 +1,4 @@
+const LOWBAR_F1=690;
 const CONSTDOOR = {
     "105":{"x":550,"y":900,"z":1},
     "110":{"x":300,"y":1200,"z":1},
@@ -29,7 +30,7 @@ export function runPlotly3D(roomNumber) {
     function unpack(data, key, guestId) {
       let returnArr = [];
       data.forEach(element => {
-        if (element.suspect === guestId) returnArr.push(key==="CoY"?element[key]%690:element[key]);
+        if (element.suspect === guestId) returnArr.push(key==="CoY"?element[key]%LOWBAR_F1:element[key]);
       });
       return returnArr;
     }
@@ -101,11 +102,11 @@ export function runPlotly3D(roomNumber) {
     }
 
       const roomCoObj=CONSTDOOR[`${roomNumber}`]
-      console.log(''+roomCoObj.x + roomCoObj.y%690+ roomCoObj.z)
+      console.log(''+roomCoObj.x + roomCoObj.y%LOWBAR_F1+ roomCoObj.z)
       traces.push({
           name: `CrimeScene#${roomNumber}`,
           x: [roomCoObj.x],
-          y: [roomCoObj.y%690],
+          y: [roomCoObj.y%LOWBAR_F1],
           z: [roomCoObj.z],
           font:{size:30},
           id: 0,
