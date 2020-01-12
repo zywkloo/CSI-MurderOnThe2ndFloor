@@ -10,13 +10,13 @@ https://martellotech.com/cuhacking/
 A tool to help the forensic team to simulate crime scenes and analyze the suspects by their behaviour based on time and space.
 ![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/737/datas/gallery.jpg)
 
-## How I built it
+## How We built it
 We took advantage of the modern web technology like `d3.js`, `WebGL`, `Plotly.js`, `Node.js` to build an analyzer restoring the crime scene with high fidelity.
 
-## Challenges I ran into
+## Challenges We ran into
 * None of us has experienced in the visualization library.
 
-## Accomplishments that I'm proud of
+## Accomplishments that We're proud of
 
 * An application can be used to investigate the crime scene.
 * It allows updating JSON file (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to service to analyze the data of all suspects.
