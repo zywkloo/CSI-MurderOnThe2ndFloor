@@ -1,24 +1,23 @@
 {
-  "name": "MurderOn2ndFloor-WEB",
+  "name": "CSI-MurderOnThe2ndFloor",
   "version": "1.0.0",
-  "description": "",
+  "description": "cuHacking2020 challenge project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cuHacking20-TeamHarbinRestaurant/MurderOn2ndFloor-WEB.git"
+    "url": "git+https://https://github.com/zywkloo/CSI-MurderOnThe2ndFloor.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cuHacking20-TeamHarbinRestaurant/MurderOn2ndFloor-WEB/issues"
-  },
-  "homepage": "https://github.com/cuHacking20-TeamHarbinRestaurant/MurderOn2ndFloor-WEB#readme",
+  "license": "MIT",
+  "homepage": "https://https://github.com/zywkloo/CSI-MurderOnThe2ndFloor",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }

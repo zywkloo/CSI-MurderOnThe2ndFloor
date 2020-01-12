@@ -20,6 +20,11 @@ a {
 
 #recipe {
   width: 200px;
+  margin-right: 0.8rem;
+}
+
+#go {
+  width: 5.3rem;
 }
 
 .container {
@@ -103,4 +108,9 @@ a {
   #recipe {
     margin: 0 auto 0.5em auto;
   }
+}
+
+.file-custom:after {
+  position: absolute;
+  left: 1.1rem;
 }
