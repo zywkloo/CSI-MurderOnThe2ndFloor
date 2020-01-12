@@ -24,13 +24,14 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     }
     let InitTraces = {}
     for (let key of Object.keys(InitPos)){
+        const sizeNumber= key.indexOf("n/a")!==-1?10:50
         InitTraces[key]={
             x: [InitPos[key].x],
             y: [InitPos[key].y],
             z: [InitPos[key].z],
             id: ['init'],
             text: ['Outside'],
-            marker: {size: [50]}
+            marker: {size: [sizeNumber]}
         };
     }
 
