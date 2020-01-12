@@ -18,13 +18,18 @@ a {
   text-decoration: none;
 }
 
-#recipe {
+#room {
   width: 200px;
   margin-right: 0.8rem;
 }
 
 #go {
   width: 5.3rem;
+}
+
+.controls-stacked {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .container {

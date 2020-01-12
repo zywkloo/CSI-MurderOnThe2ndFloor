@@ -8,14 +8,10 @@ const app = express()
 
 const PORT = 3000
 const ROOT_DIR = '/client/build'
-// const REGEX = /^\/(?:\.html)?$/
 
 // Serve the static files from the React app
 app.use(express.json())
 app.use(express.static(path.join(__dirname, ROOT_DIR)))
-
-// app.get('/api/test', (req, res) => res.send('Hello World!'))
-
 
 app.post('/upload/dataset', async (req, res) => {
     console.log('reqBody', req.body)

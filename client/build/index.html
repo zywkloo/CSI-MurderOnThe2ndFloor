@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Input Room Number</title>
     <link rel="stylesheet" href="pure-min.css">
-    <link rel="stylesheet" href="client.css">
     <link rel="stylesheet" href="wtf-forms.css">
+    <link rel="stylesheet" href="client.css">
     <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -16,15 +16,15 @@
 <body>
 <h1>Victim Room Number</h1>
 
-<form class="controls-stacked">
+<div class="controls-stacked">
     <label class="file">
         <input type="file" id="file">
         <span class="file-custom"></span>
     </label>
-</form>
+</div>
 <form class="pure-form" id="form">
     <fieldset>
-        <input type="text" id="recipe" placeholder="Enter room number" autofocus required>
+        <input type="text" id="room" placeholder="Enter room number" autofocus required>
         <button class="pure-button pure-button-primary" id="go">Go</button>
     </fieldset>
 </form>
@@ -36,7 +36,50 @@
 
 <script src='plotly.js'></script>
 <script>
-    <input type="file" id="selectFiles" value="Import" /><br />
+    (function(){
+        const form = document.getElementById('form')
+        const room = document.getElementById('room')
+
+        document.addEventListener('DOMContentLoaded', () => {
+            form.addEventListener('submit', uploadData)
+        })
+
+        let dataset;
+
+        // ajax call
+        const uploadData = (data) => {
+            let xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log("upload successful")
+                    } else if (xhr.status === 500) {
+                        const error = JSON.parse(xhr.responseText)
+                        console.error(error)
+                    }
+                }
+            }
+            xhr.open('POST', `/upload/dataset`)
+            xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+            xhr.send(JSON.stringify({data: dataset, room: roomNumber}))
+        }
+
+        // file handle
+        const onChange = (event) => {
+            const reader = new FileReader();
+            reader.onload = onReaderLoad;
+            reader.readAsText(event.target.files[0]);
+        }
+
+        const onReaderLoad = (event) => {
+            dataset = event.target.result;
+        }
+
+        document.getElementById('file').addEventListener('change', onChange);
+
+
+
+    })();
 </script>
 </body>
 
