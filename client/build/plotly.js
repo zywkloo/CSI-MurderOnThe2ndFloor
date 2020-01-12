@@ -145,6 +145,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     }
 
     var layout = {
+        title:'Crime Scene  - Time Recovery',
         xaxis: {
             // title: 'X coordinate',
             range: [0,1417]

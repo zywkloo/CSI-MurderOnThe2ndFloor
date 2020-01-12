@@ -107,6 +107,7 @@ export function runPlotly3D() {
           x: [roomCoObj.x],
           y: [roomCoObj.y%690],
           z: [roomCoObj.z],
+          font:{size:30},
           id: 0,
           text: 'VictimFound',
           mode: "markers",
@@ -134,7 +135,8 @@ export function runPlotly3D() {
     // created in the above loop.
 
     var layout = {
-      xaxis: {
+        title:'Crime Scene  - Spacial Recovery',
+        xaxis: {
         // title: 'X coordinate',
         range: [0, 1417]
       },
