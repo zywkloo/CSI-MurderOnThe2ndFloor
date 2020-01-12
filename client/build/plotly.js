@@ -1,5 +1,5 @@
 
-Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv', function (err, data) {
+Plotly.d3.csv('datasets.csv', function (err, data) {
     // Create a lookup table to sort and regroup the columns of data,
     // first by year, then by continent:
     var lookup = {};
@@ -103,11 +103,11 @@ Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminde
     var layout = {
         xaxis: {
             title: 'X coordinate',
-            range: [30, 85]
+            range: [0,1417]
         },
         yaxis: {
             title: 'Y coordinate',
-            type: 'log'
+            range: [0,793]
         },
         // scene:{
         //     xaxis:{visible:true},
