@@ -11,19 +11,30 @@
     <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-
 <body>
 <h1>Victim Room Number</h1>
+
 <form class="pure-form" id="form">
     <fieldset>
         <input type="text" id="recipe" placeholder="Enter room number" autofocus required>
         <button class="pure-button pure-button-primary" id="go">Go</button>
     </fieldset>
 </form>
+<div style="width:100%;border:1px solid gray;padding:8px;background: url('./Floor-Plan-pdf.jpg')">
+    <p style="margin-right:150px;">The CSS background properties are used to define the background effects
+        for elements.</p>
+    <p>CSS background properties:</p>
+    <ul>
+        <li>background-color</li>
+        <li>background-image</li>
+        <li>background-repeat</li>
+        <li>background-attachment</li>
+        <li>background-position</li>
+    </ul>
+</div>
 <div >
     <div id="level1" style="max-height: 1000px;max-width:1000px; width:70%;height:70% ; margin: auto;"><!-- Plotly chart will be drawn inside this DIV --></div>
-    <div id="level2" style="height: auto"><!-- Plotly chart will be drawn inside this DIV --></div>
-</div>
+    <div id="level2"><!-- Plotly chart will be drawn inside this DIV --></div>
 
 <div class="container">
 
@@ -31,5 +42,4 @@
 
 <script src='plotly.js'></script>
 </body>
-
 </html>

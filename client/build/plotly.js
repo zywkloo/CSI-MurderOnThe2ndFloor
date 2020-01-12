@@ -64,8 +64,13 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             marker: {
                 size: data.marker.size.slice(),
                 sizemode: 'area',
-                sizeref: 1 //sizeref: 200000
-            }
+                sizeref: 1,//sizeref: 200000,
+                // colorbar:{thicknessmode:'fraction'},
+                // line:{width:2,color:'#666'}
+            },
+            // line:{
+            //     color: '#677',
+            // }
         });
     }
 
@@ -109,6 +114,33 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             title: 'Y coordinate',
             range: [0,1500]
         },
+        images: [
+            {
+                "source": "Floor-Plan-pdf.png",
+                "xref": "xaxis",
+                "yref": "yaxis",
+                "x": 0.5,
+                "y": 0.45,
+                "sizex": 0.2,
+                "sizey": 0.2,
+                "xanchor": "left",
+                "yanchor": "bottom",
+                "sizing": "stretch",
+            },
+            {
+                "source": "https://images.plot.ly/language-icons/api-home/r-logo.png",
+                "xref": "x",
+                "yref": "y",
+                "x": 1,
+                "y": 3,
+                "sizex": 0.2,
+                "sizey": 0.2,
+                "xanchor": "right",
+                "yanchor": "middle",
+                // "sizing": "stretch",
+                "opacity": 0.4,
+                "layer": "top"
+            }],
         // scene:{
         //     xaxis:{visible:true},
         //     yaxis:{visible:true},
@@ -162,7 +194,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             pad: {l: 130, t: 55},
             currentvalue: {
                 visible: true,
-                prefix: 'Year:',
+                prefix: 'Time:',
                 xanchor: 'right',
                 font: {size: 20, color: '#666'}
             },
