@@ -2,7 +2,7 @@ const CONST = require('./point.json')
 const _ = require('lodash')
 
 const toCsv = (dataSet) => {
-  let result = ''
+  let result = 'device,year,CoZ,suspect,CoX,CoY\n'
   for (let key in dataSet) {
     // console.log(key)
     // console.log(dataSet[key])
