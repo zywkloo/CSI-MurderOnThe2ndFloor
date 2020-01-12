@@ -7,39 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Input Room Number</title>
     <link rel="stylesheet" href="pure-min.css">
+    <link rel="stylesheet" href="wtf-forms.css">
     <link rel="stylesheet" href="client.css">
     <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
+
 <body>
-<h1>Victim Room Number</h1>
+<h1>Crime Scene Investigation Tool</h1>
+
+<div class="controls-stacked">
+    <label class="file">
+        <input type="file" id="file">
+        <span class="file-custom"></span>
+    </label>
+</div>
 
 <form class="pure-form" id="form">
     <fieldset>
-        <input type="text" id="recipe" placeholder="Enter room number" autofocus required>
+        <input type="text" id="room" placeholder="Enter victim room#" autofocus required>
         <button class="pure-button pure-button-primary" id="go">Go</button>
     </fieldset>
 </form>
-<div style="width:100%;border:1px solid gray;padding:8px;background: url('./Floor-Plan-pdf.jpg')">
-    <p style="margin-right:150px;">The CSS background properties are used to define the background effects
-        for elements.</p>
-    <p>CSS background properties:</p>
-    <ul>
-        <li>background-color</li>
-        <li>background-image</li>
-        <li>background-repeat</li>
-        <li>background-attachment</li>
-        <li>background-position</li>
-    </ul>
-</div>
-<div >
-    <div id="level1" style="max-height: 1000px;max-width:1000px; width:70%;height:70% ; margin: auto;"><!-- Plotly chart will be drawn inside this DIV --></div>
-    <div id="level2"><!-- Plotly chart will be drawn inside this DIV --></div>
 
-<div class="container">
+<div id="level1" style="max-height: 1000px;max-width:1000px; width:70%;height:70% ; margin: auto;"><!-- Plotly chart will be drawn inside this DIV --></div>
+<div id="level2"><!-- Plotly chart will be drawn inside this DIV --></div>
 
-</div>
+
 
 <script src='plotly.js'></script>
+<script src='client.js'></script>
 </body>
+
 </html>

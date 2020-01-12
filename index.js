@@ -1,24 +1,35 @@
-const express = require('express');
-const path = require('path');
+const util = require('util')
+const request = util.promisify(require('request'))
+const _ = require('lodash')
+const express = require('express')
+const path = require('path')
 
-const app = express();
+const app = express()
+
+const PORT = 3000
+const ROOT_DIR = '/client/build'
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.json())
+app.use(express.static(path.join(__dirname, ROOT_DIR)))
 
-// An api endpoint that returns a short list of items
-app.get('/api/getList', (req,res) => {
-    var list = ["item1", "item2", "item3"];
-    res.json(list);
-    console.log('Sent list of items');
-});
+app.post('/upload/dataset', async (req, res) => {
+  console.log('reqBody', req.body) //obj
+  try {
+    res.json(req.body)
+  } catch (e) {
+    logError(e)
+    res.status(500).json({errorCode: 500, errorMessage: e.message})
+  }
+})
 
-// Handles any requests that don't match the ones above
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+// Error handler
+app.use(function(req, res) {
+  console.error('Unexpected Internal Error')
+  res.status(500)
+})
 
-const port = process.env.PORT || 3000;
-app.listen(port);
-
-console.log('App is listening on port ' + port + '\n http://localhost:3000/');
+app.listen(PORT, err => {
+  if (err) console.log(err)
+  console.log(`http://localhost:3000`)
+})
