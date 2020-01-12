@@ -1,47 +1,12 @@
+import * as dataSet from './temp-data.json'
 
 
-
-Plotly.d3.csv('datasets.csv', function (err, data) {
     // Create a lookup table to sort and regroup the columns of data,
     // first by year, then by suspect:
-
-    var InitPos = {
-        "Alok":{"x":100,"y":1350,"z":1},
-        "Dave":{"x":200,"y":1350,"z":1},
-        "Eugene":{"x":300,"y":1350,"z":1},
-        "Harrison":{"x":400,"y":1350,"z":1},
-        "James":{"x":500,"y":1350,"z":1},
-        "Jason":{"x":600,"y":1350,"z":1},
-        "Kristina":{"x":700,"y":1350,"z":1},
-        "Marc_Andre":{"x":800,"y":1350,"z":1},
-        "Rob":{"x":900,"y":1350,"z":1},
-        "Salina":{"x":1000,"y":1350,"z":1},
-        "Thomas":{"x":1100,"y":1350,"z":1},
-        "Veronica":{"x":1200,"y":1350,"z":1},
-        "n/a-phone":{"x":250,"y":1450,"z":1},
-        "n/a-door":{"x":450,"y":1450,"z":1},
-        "n/a-elevator":{"x":650,"y":1450,"z":1}
-    }
-    let InitTraces = {}
-    for (let key of Object.keys(InitPos)){
-        InitTraces[key]={
-            x: [InitPos[key].x],
-            y: [InitPos[key].y],
-            z: [InitPos[key].z],
-            id: ['init'],
-            text: ['Outside'],
-            marker: {size: [50]}
-        };
-    }
-
-    let time0 = data[0].year-1
     var lookup = {};
-    lookup[time0]=InitTraces
-    console.log(JSON.stringify(data[0])+JSON.stringify(lookup))
-
     function getData(year, suspect) {
         var byYear, trace;
-        if (!(byYear = lookup[year])) {
+        if (!(byYear = lookup[year])) {;
             byYear = lookup[year] = {};
         }
         // If a container for this year + suspect doesn't exist yet,
@@ -60,19 +25,19 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         return trace;
     }
 
+
     // Go through each row, get the right trace, and append the data:
-    for (var i = 0; i < data.length; i++) {
-        var datum = data[i];
+    for (var i = 0; i < dataSet.length; i++) {
+        var datum = dataSet[i];
         var trace = getData(datum.year, datum.suspect);
-        trace.text.push(datum.device);
-        trace.id.push(datum.device);
+        trace.text.push(datum.event);
+        trace.id.push(datum.event);
         trace.x.push(datum.CoX);
         trace.y.push(datum.CoY);
         trace.z.push(datum.CoZ*500);
         trace.marker.size.push(200);
     }
 
-    console.log(JSON.stringify(lookup))
     // Get the group names:
     var years = Object.keys(lookup);
     // In this case, every year includes every suspect, so we
@@ -81,7 +46,6 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     var suspects = Object.keys(firstYear);
 
     // Create the main traces, one for each suspect:
-    console.log(JSON.stringify(suspects))
     var traces = [];
     for (i = 0; i < suspects.length; i++) {
         var data = firstYear[suspects[i]];
@@ -236,4 +200,4 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         config: {showSendToCloud:true},
         frames: frames,
     });
-});
+
