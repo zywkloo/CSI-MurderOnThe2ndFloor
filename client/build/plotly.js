@@ -16,26 +16,32 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         "Salina":{"x":1000,"y":1350,"z":1},
         "Thomas":{"x":1100,"y":1350,"z":1},
         "Veronica":{"x":1200,"y":1350,"z":1},
-        "n/a-phone":{"x":250,"y":1450,"z":1},
-        "n/a-door":{"x":450,"y":1450,"z":1},
-        "n/a-elevator":{"x":650,"y":1450,"z":1}
+        // "n/a-phone":{"x":250,"y":1450,"z":1},
+        // "n/a-door":{"x":450,"y":1450,"z":1},
+        // "n/a-elevator":{"x":650,"y":1450,"z":1},
+        "n/a":{"x":850,"y":1450,"z":1}
     }
     let InitTraces = {}
     for (let key of Object.keys(InitPos)){
+        const sizeNumber= key.indexOf("n/a")!==-1?20:50
+        const symbolType= key.indexOf("n/a")!==-1?"triangle-ne":"circle"
         InitTraces[key]={
             x: [InitPos[key].x],
             y: [InitPos[key].y],
             z: [InitPos[key].z],
             id: ['init'],
             text: ['Outside'],
-            marker: {size: [50]}
+            marker: {
+                size: [sizeNumber],
+                symbol: [symbolType]
+            }
         };
     }
 
-    let time0 = data[0].year-1
+    let time0 = data[0].year-1  //todo: -10
     var lookup = {};
     lookup[time0]=InitTraces
-    console.log(JSON.stringify(data[0])+JSON.stringify(lookup))
+    // console.log(JSON.stringify(data[0])+JSON.stringify(lookup))
 
     function getData(year, suspect) {
         var byYear, trace;
@@ -70,7 +76,6 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         trace.marker.size.push(200);
     }
 
-    console.log(JSON.stringify(lookup))
     // Get the group names:
     var years = Object.keys(lookup);
     // In this case, every year includes every suspect, so we
@@ -104,10 +109,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
                 sizeref: 1,//sizeref: 200000,
                 // colorbar:{thicknessmode:'fraction'},
                 // line:{width:2,color:'#666'}
-            },
-            // line:{
-            //     color: '#677',
-            // }
+            }
         });
     }
 
@@ -133,7 +135,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     for (i = 0; i < years.length; i++) {
         sliderSteps.push({
             method: 'animate',
-            label: years[i],
+            label: new Date(years[i]*1000).toLocaleTimeString(),
             args: [[years[i]], {
                 mode: 'immediate',
                 transition: {duration: 3},
@@ -158,7 +160,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
                 "yref": "yaxis",
                 "x": 0,
                 "y": 0,
-                "opacity":0.5,
+                "opacity":0.3,
                 "sizex": 1,
                 "sizey": 1,
                 "xanchor": "left",
@@ -185,7 +187,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         updatemenus: [{
             x: 0,
             y: 0,
-            z:0,
+            z: 0,
             yanchor: 'top',
             xanchor: 'left',
             zanchor: 'up',

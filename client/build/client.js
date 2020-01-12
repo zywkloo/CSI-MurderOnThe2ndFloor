@@ -1,4 +1,5 @@
 import { runPlotly } from './plotly.js'
+import { runPlotly3D } from './plotly3D.js'
 
 (function() {
   const uploadWrap = document.getElementById('upload-wrap')
@@ -19,6 +20,7 @@ import { runPlotly } from './plotly.js'
     currentView = view
     currentView.style.display = 'block'
     runPlotly();
+    runPlotly3D();
   }
 
   let dataset
