@@ -9,16 +9,19 @@ Martello forensic data analytic challenge
 https://martellotech.com/cuhacking/
 
 ## What it does
-We created a tool that helps the forensic team to simulate crime scenes and analyze the suspects by their behaviour based on time and space.
+A tool to help the forensic team to simulate crime scenes and analyze the suspects by their behaviour based on time and space.
 
 ## How I built it
 We took advantage of the modern web technology like `d3.js`, `WebGL`, `Plotly.js`, `Node.js` to build an analyzer restoring the crime scene with high fidelity.
 
 ## Challenges I ran into
-None of us has experienced in the visualization library.
+* None of us has experienced in the visualization library.
 
 ## Accomplishments that I'm proud of
-We made it!
+* An application can be used to investigate the crime scene.
+* It allows updating JSON file (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to service to analyze the data of all suspects.
+* The murder room will be put in and marked on the 3D.
+* A visualization web application shows the behaviour of all suspects by the time and space.
 
 ## What I learned
 - Learned how to discuss an unfamiliar problem with teammates from different programming backgrounds.
