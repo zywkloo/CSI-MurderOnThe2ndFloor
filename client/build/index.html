@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<h1>Victim Room Number</h1>
+<h1>Crime Scene Investigation Tool</h1>
 
 <div class="controls-stacked">
     <label class="file">
@@ -22,9 +22,10 @@
         <span class="file-custom"></span>
     </label>
 </div>
+
 <form class="pure-form" id="form">
     <fieldset>
-        <input type="text" id="room" placeholder="Enter room number" autofocus required>
+        <input type="text" id="room" placeholder="Enter victim room#" autofocus required>
         <button class="pure-button pure-button-primary" id="go">Go</button>
     </fieldset>
 </form>
@@ -35,52 +36,7 @@
 
 
 <script src='plotly.js'></script>
-<script>
-    (function(){
-        const form = document.getElementById('form')
-        const room = document.getElementById('room')
-
-        document.addEventListener('DOMContentLoaded', () => {
-            form.addEventListener('submit', uploadData)
-        })
-
-        let dataset;
-
-        // ajax call
-        const uploadData = (data) => {
-            let xhr = new XMLHttpRequest()
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        console.log("upload successful")
-                    } else if (xhr.status === 500) {
-                        const error = JSON.parse(xhr.responseText)
-                        console.error(error)
-                    }
-                }
-            }
-            xhr.open('POST', `/upload/dataset`)
-            xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
-            xhr.send(JSON.stringify({data: dataset, room: roomNumber}))
-        }
-
-        // file handle
-        const onChange = (event) => {
-            const reader = new FileReader();
-            reader.onload = onReaderLoad;
-            reader.readAsText(event.target.files[0]);
-        }
-
-        const onReaderLoad = (event) => {
-            dataset = event.target.result;
-        }
-
-        document.getElementById('file').addEventListener('change', onChange);
-
-
-
-    })();
-</script>
+<script src='client.js'></script>
 </body>
 
 </html>

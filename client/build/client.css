@@ -117,5 +117,6 @@ a {
 
 .file-custom:after {
   position: absolute;
-  left: 1.1rem;
+  left: 0.6rem;
+  color: #7a7a7a;
 }
