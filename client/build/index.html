@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input Room Number</title>
+    <link rel="stylesheet" href="pure-min.css">
+    <link rel="stylesheet" href="client.css">
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+<h1>Victim Room Number</h1>
+<form class="pure-form" id="form">
+    <fieldset>
+        <input type="text" id="recipe" placeholder="Enter room number" autofocus required>
+        <button class="pure-button pure-button-primary" id="go">Go</button>
+    </fieldset>
+</form>
+<div id="level1"><!-- Plotly chart will be drawn inside this DIV --></div>
+<div id="level2"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+
+<div class="container">
+
+</div>
+
+<script src='plotly.js'></script>
+</body>
+
+</html>
