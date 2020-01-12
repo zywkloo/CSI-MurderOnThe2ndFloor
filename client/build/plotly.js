@@ -13,29 +13,34 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         "James":{"x":500,"y":1350,"z":1},
         "Jason":{"x":600,"y":1350,"z":1},
         "Kristina":{"x":700,"y":1350,"z":1},
-        "Marc_Andre":{"x":800,"y":1350,"z":1},
+        "Marc-Andre":{"x":800,"y":1350,"z":1},
         "Rob":{"x":900,"y":1350,"z":1},
         "Salina":{"x":1000,"y":1350,"z":1},
         "Thomas":{"x":1100,"y":1350,"z":1},
         "Veronica":{"x":1200,"y":1350,"z":1},
-        "n/a-phone":{"x":250,"y":1450,"z":1},
-        "n/a-door":{"x":450,"y":1450,"z":1},
-        "n/a-elevator":{"x":650,"y":1450,"z":1}
+        // "n/a-phone":{"x":250,"y":1450,"z":1},
+        // "n/a-door":{"x":450,"y":1450,"z":1},
+        // "n/a-elevator":{"x":650,"y":1450,"z":1},
+        "n/a":{"x":850,"y":1450,"z":1}
     }
     let InitTraces = {}
     for (let key of Object.keys(InitPos)){
-        const sizeNumber= key.indexOf("n/a")!==-1?10:50
+        const sizeNumber= key.indexOf("n/a")!==-1?20:50
+        const symbolType= key.indexOf("n/a")!==-1?"triangle-ne":"circle"
         InitTraces[key]={
             x: [InitPos[key].x],
             y: [InitPos[key].y],
             z: [InitPos[key].z],
             id: ['init'],
             text: ['Outside'],
-            marker: {size: [sizeNumber]}
+            marker: {
+                size: [sizeNumber],
+                symbol: [symbolType]
+            }
         };
     }
 
-    let time0 = data[0].year-1
+    let time0 = data[0].year-10  //todo: -10
     var lookup = {};
     lookup[time0]=InitTraces
     // console.log(JSON.stringify(data[0])+JSON.stringify(lookup))
@@ -158,7 +163,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
                 "yref": "yaxis",
                 "x": 0,
                 "y": 0,
-                "opacity":0.5,
+                "opacity":0.3,
                 "sizex": 1,
                 "sizey": 1,
                 "xanchor": "left",
