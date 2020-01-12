@@ -5,7 +5,7 @@ export function runPlotly3D() {
     function unpack(data, key, guestId) {
       let returnArr = [];
       data.forEach(element => {
-        if (element.suspect === guestId) returnArr.push(element[key]);
+        if (element.suspect === guestId) returnArr.push(key==="CoY"?element[key]%690:element[key]);
       });
       return returnArr;
     }
@@ -69,7 +69,7 @@ export function runPlotly3D() {
         //Todo: uncomment this will enable 3D mode
         type: "scatter3d",
         marker: {
-          size: [500],
+          size: [1000],
           sizemode: "area",
           sizeref: 1 //sizeref: 200000,
         }
