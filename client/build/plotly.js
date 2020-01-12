@@ -119,27 +119,14 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
                 "source": "Floor-Plan-pdf.png",
                 "xref": "xaxis",
                 "yref": "yaxis",
-                "x": 0.5,
-                "y": 0.45,
-                "sizex": 0.2,
-                "sizey": 0.2,
+                "x": 0,
+                "y": 0,
+                "opacity":0.5,
+                "sizex": 1,
+                "sizey": 1,
                 "xanchor": "left",
                 "yanchor": "bottom",
                 "sizing": "stretch",
-            },
-            {
-                "source": "https://images.plot.ly/language-icons/api-home/r-logo.png",
-                "xref": "x",
-                "yref": "y",
-                "x": 1,
-                "y": 3,
-                "sizex": 0.2,
-                "sizey": 0.2,
-                "xanchor": "right",
-                "yanchor": "middle",
-                // "sizing": "stretch",
-                "opacity": 0.4,
-                "layer": "top"
             }],
         // scene:{
         //     xaxis:{visible:true},
@@ -205,13 +192,6 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
 
     // Create the plot:
     Plotly.plot('level1', {
-        data: traces,
-        layout: layout,
-        config: {showSendToCloud:true},
-        frames: frames,
-    });
-    // Create the plot:
-    Plotly.plot('level2', {
         data: traces,
         layout: layout,
         config: {showSendToCloud:true},
