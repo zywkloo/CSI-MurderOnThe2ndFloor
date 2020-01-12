@@ -99,14 +99,17 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             text: data.text.slice(),
             mode: 'markers',
             //Todo: uncomment this will enable 3D mode
-            // type: 'scatter3d',
+            type: 'scatter3d',
             marker: {
                 size: data.marker.size.slice(),
                 sizemode: 'area',
                 sizeref: 1,//sizeref: 200000,
                 // colorbar:{thicknessmode:'fraction'},
                 // line:{width:2,color:'#666'}
-            }
+            },
+            // line:{
+            //     color: '#677',
+            // }
         });
     }
 
@@ -150,20 +153,26 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             // title: 'Y coordinate',
             range: [0,1500]
         },
-        images: [
-            {
-                "source": "Floor-Plan-pdf.png",
-                "xref": "xaxis",
-                "yref": "yaxis",
-                "x": 0,
-                "y": 0,
-                "opacity":0.5,
-                "sizex": 1,
-                "sizey": 1,
-                "xanchor": "left",
-                "yanchor": "bottom",
-                // "sizing": "stretch",
-            }],
+        margin: {
+            l: 0,
+            r: 0,
+            b: 0,
+            t: 0
+        },
+        // images: [
+        //     {
+        //         "source": "Floor-Plan-pdf.png",
+        //         "xref": "xaxis",
+        //         "yref": "yaxis",
+        //         "x": 0,
+        //         "y": 0,
+        //         "opacity":0.5,
+        //         "sizex": 1,
+        //         "sizey": 1,
+        //         "xanchor": "left",
+        //         "yanchor": "bottom",
+        //         // "sizing": "stretch",
+        //     }],
         // scene:{
         //     xaxis:{visible:true},
         //     yaxis:{visible:true},
@@ -184,7 +193,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         updatemenus: [{
             x: 0,
             y: 0,
-            z:0,
+            z: 0,
             yanchor: 'top',
             xanchor: 'left',
             zanchor: 'up',
@@ -227,7 +236,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     // layout.scene = {zaxis: {visible:true}}
 
     // Create the plot:
-    Plotly.plot('level1', {
+    Plotly.plot('level3D', {
         data: traces,
         layout: layout,
         config: {showSendToCloud:true},

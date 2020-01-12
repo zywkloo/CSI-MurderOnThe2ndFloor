@@ -1,6 +1,6 @@
 device,year,CoZ,suspect,CoX,CoY
-Walk,1,2,Alok,1,1
-Walk,2,2,Alok,2,2
+Walk,1,0,Alok,1,1
+Walk,2,1,Alok,2,2
 Walk,999,2,Alok,999,99
 Eat,1,1,Dave,100,100
 Eat,2,1,Dave,2,200
