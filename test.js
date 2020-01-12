@@ -216,3 +216,72 @@ console.log("total known length after"+(eventslength-unknownLength+newDataLength
 console.log("total unknown length after "+(unknownLength-newDataLength));
 
 console.log(newData);
+function get210Act(events){
+    var activities = getEventWith(events, 'device-id', '210')
+    return(activities)
+}
+function analysisActInRoom(events){
+    var peopleInroom = []
+    var peopleRecord = []
+    for (const e of events){
+        const name = e['guest-id']
+        const time = e['time']
+        if (e['event'] === 'door closed'){
+            if (peopleInroom.includes(name)){ // go out of room
+                peopleInroom = peopleInroom.filter(item => item !== name)
+                peopleRecord.push({'guest-id': name, time: time, action: 'out'})
+            }else{// go in
+                peopleInroom.push(name)
+                peopleRecord.push({'guest-id': name, time: time, action: 'in'})
+            }
+        }
+    }
+    return peopleRecord
+}
+function calculateTime(record, lastTime){
+    var recordOfEach = []
+    const numberOfPeople = calculateNumberOfPeople(record)
+    var totals = []
+    for (const name of numberOfPeople){
+        var person = []
+        for (const e of record){
+            if (e['guest-id'] === name){
+                person.push(e)
+            }
+        }
+        recordOfEach.push(person)
+    }
+    for (const person of recordOfEach){
+        var time = 0
+        var total = 0
+        for (const e of person){
+            if (e.action === 'in'){
+                time = e.time
+            }else{
+                total += e.time - time
+                time = 0
+            }
+        }
+        if (time !== 0){
+            total += (lastTime - time)
+        }
+        totals.push(total)
+    }
+    var result = []
+    for (const number in totals){
+        result.push({name : numberOfPeople[number], totalTimeInRoom: totals[number]})
+    }
+    return result
+}
+function calculateNumberOfPeople(record){
+    var people = []
+    for (const person of record){
+        if (people.includes(person['guest-id'])){
+        }else {
+            people.push(person['guest-id'])
+        }
+    }
+    return people
+}
+const record = analysisActInRoom(get210Act(events))
+console.log(calculateTime(record, 1578236760))
