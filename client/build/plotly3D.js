@@ -139,7 +139,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     for (i = 0; i < years.length; i++) {
         sliderSteps.push({
             method: 'animate',
-            label: years[i],
+            label: new Date(years[i]*1000).toLocaleTimeString(),
             args: [[years[i]], {
                 mode: 'immediate',
                 transition: {duration: 3},

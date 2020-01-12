@@ -40,7 +40,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         };
     }
 
-    let time0 = data[0].year-10  //todo: -10
+    let time0 = data[0].year-1  //todo: -10
     var lookup = {};
     lookup[time0]=InitTraces
     // console.log(JSON.stringify(data[0])+JSON.stringify(lookup))
@@ -78,7 +78,6 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         trace.marker.size.push(200);
     }
 
-    console.log(JSON.stringify(lookup))
     // Get the group names:
     var years = Object.keys(lookup);
     // In this case, every year includes every suspect, so we
@@ -138,7 +137,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
     for (i = 0; i < years.length; i++) {
         sliderSteps.push({
             method: 'animate',
-            label: years[i],
+            label: new Date(years[i]*1000).toLocaleTimeString(),
             args: [[years[i]], {
                 mode: 'immediate',
                 transition: {duration: 3},
@@ -190,7 +189,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         updatemenus: [{
             x: 0,
             y: 0,
-            z:0,
+            z: 0,
             yanchor: 'top',
             xanchor: 'left',
             zanchor: 'up',
