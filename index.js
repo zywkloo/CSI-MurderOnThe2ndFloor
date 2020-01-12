@@ -1,6 +1,5 @@
-const util = require('util')
-const request = util.promisify(require('request'))
-const _ = require('lodash')
+const {collect} = require('./client/build/process.js')
+const fs = require('fs')
 const express = require('express')
 const path = require('path')
 
@@ -14,11 +13,12 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, ROOT_DIR)))
 
 app.post('/upload/dataset', async (req, res) => {
-  console.log('reqBody', req.body.room) //obj
+  let obj = JSON.parse(req.body.data)
   try {
-    res.json(req.body.room)
+    const result = await collect(obj)
+    res.status(200).end()
   } catch (e) {
-    logError(e)
+    console.error(e)
     res.status(500).json({errorCode: 500, errorMessage: e.message})
   }
 })

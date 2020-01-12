@@ -1,6 +1,7 @@
 import { runPlotly } from './plotly.js'
 
 (function() {
+  const uploadWrap = document.getElementById('upload-wrap')
   const form = document.getElementById('form')
   const room = document.getElementById('room')
   const landingView = document.getElementById('landing_page')
@@ -32,8 +33,6 @@ import { runPlotly } from './plotly.js'
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           console.log('CSI: upload successful')
-          console.log(xhr.responseText)
-          //todo: change view
           changeView(analyzeView)
         } else if (xhr.status === 500) {
           console.error(error)
@@ -48,15 +47,29 @@ import { runPlotly } from './plotly.js'
     e.stopPropagation()
   }
 
-  // // file handle
+
+  // file handle
+  let fileName
+
+  const updateFileName = (name) => {
+
+    const ss = document.querySelector('.file-custom')
+    console.log(ss)
+
+    // const fileReadyName = document.querySelector('.file-ready-name')
+    // fileReadyName.textContent = name
+  }
+
   const onChange = event => {
     const reader = new FileReader()
     reader.onload = onReaderLoad
+    fileName = event.target.files[0].name
     reader.readAsText(event.target.files[0])
   }
 
   const onReaderLoad = event => {
     dataset = event.target.result
+    updateFileName(fileName)
     console.log('CSI: upload ready')
   }
 
