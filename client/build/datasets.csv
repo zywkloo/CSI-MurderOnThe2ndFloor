@@ -1,6 +1,6 @@
-country,year,pop,continent,lifeExp,gdpPercap
-Marc-Andre,1990,11404948,Marc-Andre,50,50
-Marc-Andre,1995,11404948,Marc-Andre,100,50
+event,year,CoZ,suspect,CoX,CoY
+Walk,1990,11404948,Marc-Andre,50,50
+Call,1995,11404948,Marc-Andre,100,50
 Marc-Andre,2000,11404948,Marc-Andre,50,150
 Marc-Andre,2005,11404948,Marc-Andre,150,150
 Marc-Andre,2010,11404948,Marc-Andre,250,250
