@@ -1,3 +1,27 @@
+const CONSTDOOR = {
+    "105":{"x":550,"y":900,"z":1},
+    "110":{"x":300,"y":1200,"z":1},
+    "130":{"x":300,"y":760,"z":1},
+    "150":{"x":1285,"y":1040,"z":1},
+    "152":{"x":850,"y":920,"z":1},
+    "154":{"x":1030,"y":920,"z":1},
+    "155":{"x":1150,"y":1080,"z":1},
+    "151":{"x":900,"y":1080,"z":1},
+    "156":{"x":1200,"y":920,"z":1},
+    "156b":{"x":1200,"y":800,"z":1},
+    "210":{"x":210,"y":370,"z":2},
+    "220":{"x":210,"y":270,"z":2},
+    "231":{"x":320,"y":450,"z":2},
+    "232":{"x":315,"y":190,"z":2},
+    "233":{"x":520,"y":450,"z":2},
+    "235":{"x":740,"y":450,"z":2},
+    "236":{"x":765,"y":190,"z":2},
+    "241":{"x":965,"y":385,"z":2},
+    "244":{"x":965,"y":245,"z":2},
+    "248":{"x":1175,"y":245,"z":2},
+    "247":{"x":1175,"y":385,"z":2},
+    "250":{"x":1285,"y":270,"z":2}
+}
 export function runPlotly3D() {
   Plotly.d3.csv("datasets.csv", function(err, data) {
     // Create a lookup table to sort and regroup the columns of data,
@@ -64,7 +88,7 @@ export function runPlotly3D() {
         y: unpack(data, "CoY", suspects[i]),
         z: unpack(data, "CoZ", suspects[i]),
         id: unpack(data, "device", suspects[i]),
-        text: unpack(data, "year", suspects[i]),
+        text: unpack(data, "year", suspects[i]).map(ele=>new Date(ele*1000).toLocaleString()),
         mode: "markers",
         //Todo: uncomment this will enable 3D mode
         type: "scatter3d",
@@ -75,8 +99,31 @@ export function runPlotly3D() {
         }
       });
     }
+      var roomNumber=210
+      const roomCoObj=CONSTDOOR[`${roomNumber}`]
+      console.log(''+roomCoObj.x + roomCoObj.y%690+ roomCoObj.z)
+      traces.push({
+          name: `CrimeScene#${roomNumber}`,
+          x: [roomCoObj.x],
+          y: [roomCoObj.y%690],
+          z: [roomCoObj.z],
+          id: 0,
+          text: 'VictimFound',
+          mode: "markers",
+          //Todo: uncomment this will enable 3D mode
+          type: "scatter3d",
+          marker: {
+              size: 50,
+              color:'#99253b',
+              // sizemode: "area",
+              opacity: 0.5,
+              symbol: "6",
+              sizeref: 1 //sizeref: 200000,
+          }
+        }
+      )
 
-    // Create a frame for each year. Frames are effectively just
+          // Create a frame for each year. Frames are effectively just
     // traces, except they don't need to contain the *full* trace
     // definition (for example, appearance). The frames just need
     // the parts the traces that change (here, the data).
@@ -95,26 +142,16 @@ export function runPlotly3D() {
         // title: 'Y coordinate',
         range: [0, 1500]
       },
+        zaxis: {
+            title: 'Building floors',
+            range: [0, 3]
+        },
       margin: {
         l: 0,
         r: 0,
         b: 0,
-        t: 0
+        t: 100
       },
-      // images: [
-      //     {
-      //         "source": "Floor-Plan-pdf.png",
-      //         "xref": "xaxis",
-      //         "yref": "yaxis",
-      //         "x": 0,
-      //         "y": 0,
-      //         "opacity":0.5,
-      //         "sizex": 1,
-      //         "sizey": 1,
-      //         "xanchor": "left",
-      //         "yanchor": "bottom",
-      //         // "sizing": "stretch",
-      //     }],
       // scene:{
       //     xaxis:{visible:true},
       //     yaxis:{visible:true},
