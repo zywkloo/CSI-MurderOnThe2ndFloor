@@ -1,4 +1,4 @@
-const {collect} = require('./client/build/process.js')
+const {toCsv} = require('./client/build/toCsv.js')
 const fs = require('fs')
 const express = require('express')
 const path = require('path')
@@ -7,6 +7,7 @@ const app = express()
 
 const PORT = 3000
 const ROOT_DIR = '/client/build'
+const CSV_PATH = '/datasets.csv'
 
 // Serve the static files from the React app
 app.use(express.json())
@@ -15,7 +16,8 @@ app.use(express.static(path.join(__dirname, ROOT_DIR)))
 app.post('/upload/dataset', async (req, res) => {
   let obj = JSON.parse(req.body.data)
   try {
-    const result = await collect(obj)
+    const csvStr = await toCsv(obj)
+    fs.writeFileSync(path.join(__dirname, ROOT_DIR + CSV_PATH), csvStr)
     res.status(200).end()
   } catch (e) {
     console.error(e)
