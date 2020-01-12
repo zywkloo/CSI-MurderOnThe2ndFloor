@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --file-name: "Choose file...";
+}
+
 body {
   background: #fff;
   margin-top: 40px;
@@ -37,11 +41,13 @@ a {
   position: absolute;
   left: 0.6rem;
   color: #7a7a7a;
+  content: var(--file-name);
 }
 
 .header-img {
   width: 100px;
 }
+
 
 .file-ready-name {
 

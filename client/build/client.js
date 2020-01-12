@@ -15,18 +15,18 @@ import { runPlotly3D } from './plotly3D.js'
     form.addEventListener('submit', uploadData)
   })
 
-  const changeView = view => {
+  const changeView = (view, roomNumber) => {
     currentView.style.display = 'none'
     currentView = view
     currentView.style.display = 'block'
     runPlotly();
-    runPlotly3D();
+    runPlotly3D(roomNumber);
   }
 
-  let dataset
+  let dataset, roomNumber
 
   const uploadData = e => {
-    let roomNumber = room.value.trim()
+    roomNumber = room.value.trim()
     room.value = ''
 
     // ajax call
@@ -35,7 +35,7 @@ import { runPlotly3D } from './plotly3D.js'
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           console.log('CSI: upload successful')
-          changeView(analyzeView)
+          changeView(analyzeView, roomNumber)
         } else if (xhr.status === 500) {
           console.error(error)
         }
@@ -43,7 +43,7 @@ import { runPlotly3D } from './plotly3D.js'
     }
     xhr.open('POST', `/upload/dataset`)
     xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8')
-    xhr.send(JSON.stringify({data: dataset, room: roomNumber}))
+    xhr.send(JSON.stringify({data: dataset}))
 
     e.preventDefault()
     e.stopPropagation()

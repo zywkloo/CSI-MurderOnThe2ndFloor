@@ -22,7 +22,7 @@ const CONSTDOOR = {
     "247":{"x":1175,"y":385,"z":2},
     "250":{"x":1285,"y":270,"z":2}
 }
-export function runPlotly3D() {
+export function runPlotly3D(roomNumber) {
   Plotly.d3.csv("datasets.csv", function(err, data) {
     // Create a lookup table to sort and regroup the columns of data,
     // first by year, then by suspect:
@@ -99,7 +99,7 @@ export function runPlotly3D() {
         }
       });
     }
-      var roomNumber=210
+
       const roomCoObj=CONSTDOOR[`${roomNumber}`]
       console.log(''+roomCoObj.x + roomCoObj.y%690+ roomCoObj.z)
       traces.push({
