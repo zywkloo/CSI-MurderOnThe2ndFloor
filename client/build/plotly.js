@@ -107,11 +107,11 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
 
     var layout = {
         xaxis: {
-            title: 'X coordinate',
+            // title: 'X coordinate',
             range: [0,1417]
         },
         yaxis: {
-            title: 'Y coordinate',
+            // title: 'Y coordinate',
             range: [0,1500]
         },
         images: [
@@ -126,7 +126,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
                 "sizey": 1,
                 "xanchor": "left",
                 "yanchor": "bottom",
-                "sizing": "stretch",
+                // "sizing": "stretch",
             }],
         // scene:{
         //     xaxis:{visible:true},
@@ -155,7 +155,7 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
             showactive: false,
             direction: 'left',
             type: 'buttons',
-            pad: {t: 87, r: 10},
+            pad: {t: 60, r: 10},
             buttons: [{
                 method: 'animate',
                 args: [null, {
@@ -178,12 +178,12 @@ Plotly.d3.csv('datasets.csv', function (err, data) {
         // Finally, add the slider and use `pad` to position it
         // nicely next to the buttons.
         sliders: [{
-            pad: {l: 130, t: 55},
+            pad: {l: 130, t: 40},
             currentvalue: {
                 visible: true,
                 prefix: 'Time:',
                 xanchor: 'right',
-                font: {size: 20, color: '#666'}
+                font: {size: 14, color: '#666'}
             },
             steps: sliderSteps
         }]
