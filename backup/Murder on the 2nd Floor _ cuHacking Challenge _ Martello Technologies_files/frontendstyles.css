@@ -1,0 +1,53 @@
+span#emailerror {
+    color: red;
+    text-transform: capitalize;
+}
+
+.crmforms_field_error {
+    color: red;
+}
+
+.crmforms_widget_textbox , .crmforms_widget_picklist , .crmforms_widget_multipicklist , .crmforms_widget_textbox_date_picker , .crmforms_post_fields {
+    width:100%;
+}
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+    border-radius: 0px;
+}
+.datetimeTd{
+    position: relative;
+}
+img.ui-datepicker-trigger {
+    position: absolute;
+    top: 18px;
+    right: 4px;
+}
+select{
+    height:auto !important;
+}
+.field-list-table td{
+    position: relative;
+}
+.dN{
+    display: none;
+}
+.dB{
+    display: block;
+}
+.red{
+    color: red;
+}
+tr{
+    border-bottom: solid 0px transparent !important; 
+}
+.form-submit{
+    text-align: left !important;
+}
+.mT20{
+    margin-top: 20px;
+}
+.field-list-table td p {
+    margin-top: 10px;
+}
+.hiddenElement{
+    display: none;
+}
