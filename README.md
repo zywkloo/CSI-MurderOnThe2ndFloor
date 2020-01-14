@@ -57,5 +57,5 @@ We could give more advice on reducing the suspects by correlating their behaviou
 
 * Sponsors
 
-  Sherry Liu, Ziv Wang
+  Sherry Liu, [Ziv Wang](https://github.com/zivvvvvwang)
 
