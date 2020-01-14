@@ -45,9 +45,17 @@ We could give more advice on reducing the suspects by correlating their behaviou
 - Push your job on your repository
 - When the job is done, submit a pull request, and that's it!
 
-## Contributors
-[Yiwei Zhang](https://github.com/zywkloo)
-[Songmi Wu](https://github.com/medifle)
-[Lilian Wang](https://github.com/lilian330)
-[Jiujiu Duan](https://github.com/moxxxx)
-[Simone Gu](https://github.com/Simonmon06)
+## People
+
+* Contributors
+
+  [Yiwei Zhang](https://github.com/zywkloo),
+  [Songmi Wu](https://github.com/medifle),
+  [Lilian Wang](https://github.com/lilian330),
+  [Jiujiu Duan](https://github.com/moxxxx),
+  [Simone Gu](https://github.com/Simonmon06)
+
+* Sponsors
+
+  Sherry Liu, Ziv Wang
+
