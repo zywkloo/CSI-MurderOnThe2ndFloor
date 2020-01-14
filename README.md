@@ -34,3 +34,7 @@ We took advantage of the modern web technology like `d3.js`, `WebGL`, `Plotly.js
 
 ## What's next for Crime Scene Investigator
 We could give more advice on reducing the suspects by correlating their behaviour and time data by algorithms if we have more time.
+
+## License
+
+[MIT](https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/blob/master/LICENSE)
