@@ -38,3 +38,16 @@ We could give more advice on reducing the suspects by correlating their behaviou
 ## License
 
 [MIT](https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/blob/master/LICENSE)
+
+## How to contribute
+- Fork the project
+- Clone it
+- Push your job on your repository
+- When the job is done, submit a pull request, and that's it!
+
+## Contributors
+[Yiwei Zhang](https://github.com/zywkloo)
+[Songmi Wu](https://github.com/medifle)
+[Lilian Wang](https://github.com/lilian330)
+[Jiujiu Duan](https://github.com/moxxxx)
+[Simone Gu](https://github.com/Simonmon06)
