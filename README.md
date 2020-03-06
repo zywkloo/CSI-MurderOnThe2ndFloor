@@ -1,7 +1,6 @@
 # Crime Scene Investigator - cuHacking 2020
 * [WINNER of Murder on the 2nd Floor](https://devpost.com/software/murder-on-2nd-floor-web-forensic-analyzer)  [[Martello](https://martellotech.com/)]
 * Restore crime scene with high fidelity in time and space dimensions to help analyze suspects!
-* Feel free to visit:http://159.203.2.253/  （When it's valid :)
 
 ## Inspiration
 [Martello forensic data analytic challenge](https://martellotech.com/cuhacking/)
