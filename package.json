@@ -14,7 +14,7 @@
   "homepage": "https://https://github.com/zywkloo/CSI-MurderOnThe2ndFloor",
   "dependencies": {
     "express": "^4.17.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
