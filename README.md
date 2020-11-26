@@ -33,7 +33,7 @@ This fits users with dynamic analytical requirements.
 
 * Timeline viualization: A visualization web application shows the behaviour of all suspects according to the timeline on the 2D building layout.
 
-* Spatial viualization:The murder room will be put in and marked on the 3D.
+* Spatial viualization: Base on the the murder room input by the user, the suspect would be marked in the 3D box.
 
 
 
