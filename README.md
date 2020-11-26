@@ -33,9 +33,9 @@ This fits users with dynamic analytical requirements.
 
 * Timeline viualization: A visualization web application shows the behaviour of all suspects according to the timeline on the 2D building layout.
 
-* Spatial viualization: Base on the the murder room input by the user, the suspect would be marked in the 3D box.
+* Spatial viualization: Based on the the murder room input by the user, the occurrence frequency of all supsects would be marked in the 3D box.
 
-
+Rather than offering a conclusion based on a specific given data, we offerd a data visualization tool to help the user (the police, the anayst) come up with their own judgement. 
 
 ## What We learned
 - Learned how to discuss an unfamiliar problem with teammates from different programming backgrounds.
@@ -56,7 +56,7 @@ This fits users with dynamic analytical requirements.
  </p>   
 
 ## What's next for Crime Scene Investigator
-We could give more advice on reducing the suspects by correlating their behaviour and time data by algorithms if we have more time.
+We could narrow down the suspects by analyzing their behaviour and time data if we have more time.
 
 ## People
 
