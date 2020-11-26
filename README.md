@@ -57,7 +57,8 @@ This fits users with dynamic analytical requirements.
  </p>   
 
 ## What's next for Crime Scene Investigator
-We could narrow down the suspects by analyzing their behaviour and time data if we have more time.
+- We could narrow down the suspects by analyzing their behaviour and time data if we have more time.
+- Provide uploading different building layouts, e.g. AutoCAD
 
 ## People
 
