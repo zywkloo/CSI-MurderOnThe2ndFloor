@@ -22,6 +22,8 @@ We made full use of the modern web technology like `Plotly.js`, `Node.js`, `Expr
 
 <img src="https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/raw/master/backup/FileUploader.gif" width = "50%"  alt="2" align=left />
 
+ ### Three Key Features
+
 * Uplodaers: 
   * It allows uploading JSON file (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to analyze the data of all suspects. 
   * The user could designate the murder scence (room #).
