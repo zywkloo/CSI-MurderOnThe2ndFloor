@@ -51,7 +51,9 @@ This fits users with dynamic analytical requirements.
 - Push your job on your repository
 - When the job is done, submit a pull request, and that's it!
 
-![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/720/datas/gallery.jpg)
+<p align="center">   
+  <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/720/datas/gallery.jpg"  alt="2" align=center />
+ </p>   
 
 ## What's next for Crime Scene Investigator
 We could give more advice on reducing the suspects by correlating their behaviour and time data by algorithms if we have more time.
