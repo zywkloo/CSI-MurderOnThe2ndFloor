@@ -10,29 +10,34 @@
 ## What it does
 A tool to help the forensic team to simulate crime scenes and analyze the suspects by their behaviour based on time and space.
 
-![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/737/datas/gallery.jpg)
-
 ## How We built it
-We took advantage of the modern web technology like `d3.js`, `WebGL`, `Plotly.js`, `Node.js` to build an analyzer restoring the crime scene with high fidelity.
+We made full use of the modern web technology like `Plotly.js`, `Node.js`, `Express` to build an analyzer restoring the crime scene with high fidelity.
 
 ## Challenges We ran into
-* None of us has experienced in the visualization library.
+* None of us has experience in the visualization library.
 
 ## Accomplishments that We're proud of
 
 * An application can be used to investigate the crime scene.
-* It allows updating JSON file (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to service to analyze the data of all suspects.
-![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/711/datas/gallery.jpg)
-* The murder room will be put in and marked on the 3D.
-* A visualization web application shows the behaviour of all suspects by the time and space.
-![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/720/datas/gallery.jpg)
 
-## What I learned
+<img src="https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/raw/master/backup/FileUploader.gif" width = "50%"  alt="2" align=left />
+
+* Uplodaers: 
+  * It allows uploading JSON file (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to analyze the data of all suspects. 
+  * The user could designate the murder scence (room #).
+This fits users with dynamic analytical requirements.
+
+<img src="https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/raw/master/backup/CrimeScene.gif" width = "50%"  alt="2" align=right />
+
+* Timeline viualization: A visualization web application shows the behaviour of all suspects according to the timeline on the 2D building layout.
+
+* Spatial viualization:The murder room will be put in and marked on the 3D.
+
+
+
+## What We learned
 - Learned how to discuss an unfamiliar problem with teammates from different programming backgrounds.
 - Learned how to modify data visualization library to meet our purpose
-
-## What's next for Crime Scene Investigator
-We could give more advice on reducing the suspects by correlating their behaviour and time data by algorithms if we have more time.
 
 ## License
 
@@ -43,6 +48,11 @@ We could give more advice on reducing the suspects by correlating their behaviou
 - Clone it
 - Push your job on your repository
 - When the job is done, submit a pull request, and that's it!
+
+![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/908/720/datas/gallery.jpg)
+
+## What's next for Crime Scene Investigator
+We could give more advice on reducing the suspects by correlating their behaviour and time data by algorithms if we have more time.
 
 ## People
 
