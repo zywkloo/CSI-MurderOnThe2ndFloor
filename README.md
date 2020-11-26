@@ -35,7 +35,8 @@ This fits users with dynamic analytical requirements.
 
 * Spatial viualization: Based on the the murder room input by the user, the occurrence frequency of all supsects would be marked in the 3D box.
 
-Rather than offering a conclusion based on a specific given data, we offerd a data visualization tool to help the user (the police, the anayst) come up with their own judgement. 
+ ### Outcome
+*  Rather than offering a conclusion based on a specific given data, we offerd a data visualization tool to help the user (the police, the analyst) come up with their own judgement. 
 
 ## What We learned
 - Learned how to discuss an unfamiliar problem with teammates from different programming backgrounds.
