@@ -1,6 +1,6 @@
 # Crime Scene Investigator - cuHacking 2020
 * [WINNER of Murder on the 2nd Floor](https://devpost.com/software/murder-on-2nd-floor-web-forensic-analyzer)  [[Martello](https://martellotech.com/)]
-* Restore crime scene with high fidelity in time and space dimensions to help analyze suspects!
+* Restore crime scenes with high fidelity in time and space dimensions to help analyze suspects!
 
 ## Inspiration
 [Martello forensic data analytic challenge](https://martellotech.com/cuhacking/)
@@ -8,10 +8,10 @@
 ![](https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/blob/master/backup/MurderOnThe2ndFloor_%20cuHackingChallenge_Martello.png?raw=true)
 
 ## What it does
-A tool to help the forensic team to simulate crime scenes and analyze the suspects by their behaviour based on time and space.
+A tool to help the forensic team simulate crime scenes and analyze the suspects by their behaviour based on time and space.
 
 ## How We built it
-We made full use of the modern web technology like `Plotly.js`, `Node.js`, `Express` to build an analyzer restoring the crime scene with high fidelity.
+We made full use of modern web technology like `Plotly.js`, `Node.js`, and`Express` to build an analyzer restoring the crime scene with high fidelity.
 
 ## Challenges We ran into
 * None of us has experience in the visualization library.
@@ -24,23 +24,23 @@ We made full use of the modern web technology like `Plotly.js`, `Node.js`, `Expr
 
  ### Three Key Features
 
-* Uplodaers: 
-  * It allows uploading JSON file (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to analyze the data of all suspects. 
-  * The user could designate the murder scence (room #).
+* Uploaders: 
+  * It allows uploading JSON files (eg, Murder-on-the-2nd-Floor-Raw-Data.json) to analyze the data of all suspects. 
+  * The user could designate the murder scene (room #).
 This fits users with dynamic analytical requirements.
 
 <img src="https://github.com/zywkloo/CSI-MurderOnThe2ndFloor/raw/master/backup/CrimeScene.gif" width = "50%"  alt="2" align=right />
 
-* Timeline viualization: A visualization web application shows the behaviour of all suspects according to the timeline on the 2D building layout.
+* Timeline visualization: A visualization web application shows the behaviour of all suspects according to the timeline on the 2D building layout.
 
-* Spatial viualization: Based on the the murder room input by the user, the occurrence frequency of all supsects would be marked in the 3D box.
+* Spatial visualization: Based on the murder room input by the user, the occurrence frequency of all suspects would be marked in the 3D box.
 
  ### Outcome
-*  Rather than offering a conclusion based on a specific given data, we offerd a data visualization tool to help the user (the police, the analyst) come up with their own judgement. 
+*  Rather than offering a conclusion based on a specific given data, we offered a data visualization tool to help the user (the police, the analyst) come up with their judgement. 
 
-## What We learned
+## What We Learned
 - Learned how to discuss an unfamiliar problem with teammates from different programming backgrounds.
-- Learned how to modify data visualization library to meet our purpose
+- Learned how to modify the data visualization library to meet our purpose
 
 ## License
 
