@@ -13,7 +13,7 @@
   "license": "MIT",
   "homepage": "https://https://github.com/zywkloo/CSI-MurderOnThe2ndFloor",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
